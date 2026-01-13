@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    /* IMAGEM DE FUNDO */
+    background-image: url("../imagens/mais.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    /* ESTILO */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    /* ⬇⬇⬇ ISSO AQUI DESCE OS BOTÕES E CONTAINERS ⬇⬇⬇ */
+    padding-top: 430px;   /* <<< MUDA ESSE VALOR */
+    padding-left: 30px;
+    padding-right: 30px;
+
+    display: flex;
+    gap: 20px;
+    position: relative;
+}
+
+/* camada escura por cima da imagem */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+/* Botão + */
+.btn-add {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #f0f0f0, #bdbdbd);
+    box-shadow: 0 5px 15px rgba(0,0,0,.4);
+}
+
+/* Container das notas */
+.notas-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Barra de nota */
+.nota {
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(to bottom, #eeeeee, #cfcfcf);
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.35);
+}
+
+/* Input da nota */
+.nota input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    outline: none;
+}
+
+/* Botão excluir */
+.btn-delete {
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
+    color: #444;
+}
+
+.btn-delete:hover {
+    color: red;
+}
+

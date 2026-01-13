@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <title>Bloco de Notas</title>
+</head>
+<body>
+
+    <!-- Botão de adicionar nota -->
+    <button class="btn-add">+</button>
+
+
+
+    <!-- Container das notas -->
+    <div class="notas-container" id="notasContainer"></div>
+        <!-- As notas serão adicionadas aqui -->
+    </div>
+
+    <script>
+        const btnAdd = document.getElementById("addNota");
+        const container = document.getElementById("notas");
+
+        btnAdd.addEventListener("click", () => {
+            const nota = document.createElement("div");
+            nota.className = "nota";
+
+            nota.innerHTML = `
+                <input type="text" placeholder="Digite sua nota..." />
+                <button class="btn-delete">✖</button>
+            `;
+
+            nota.querySelector(".btn-delete").addEventListener("click", () => {
+                nota.remove();
+            });
+
+            container.appendChild(nota);
+        });
+
+
+
+    </script>
+
+    <script src="script.js"></script>
+
+
+</body>
+</html>
